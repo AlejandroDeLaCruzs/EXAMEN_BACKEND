@@ -28,5 +28,5 @@ const start = async () => {
 };
 
 
-setTimeout(()=> 200);
+
 start().catch(err=>console.error(err));

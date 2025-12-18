@@ -60,7 +60,7 @@ export const catchPokemon = async (
   const entrenador = await db
     .collection<Trainer>(COLLECTION_ENTRENADORES)
     .findOne({ _id: new ObjectId(userId) });
-    
+
   if (entrenador && entrenador.pokemons.length > 6) {
     throw new Error("No puedes caputrar mas de 6 pokemons");
   }
