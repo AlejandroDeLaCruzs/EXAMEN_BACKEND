@@ -98,7 +98,6 @@ export const freePokemon = async (ownedPokemonId: string, userId: string) => {
     .findOne({ _id: new ObjectId(userId) });
 
   if (trainer?.pokemons.find((id: any) => id == ownedPokemonId)) {
-    await db.collection(COLLECTION_POKEMONS).deleteOne({ _id: idPokemon._id }); //Se elemina de POKEMONS
     await db
       .collection(COLLECTION_OWNEDPOKEMOSN)
       .deleteOne({ _id: new ObjectId(ownedPokemonId) });

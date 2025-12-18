@@ -18,7 +18,6 @@ const start = async () => {
     context: async ({ req }) => {
       const token = req.headers.authorization || "";
       const user = token ? await getUserFromToken(token as string) : null;
-      console.log(user);
       return { user };
     },
   });
